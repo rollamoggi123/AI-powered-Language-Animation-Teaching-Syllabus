@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 加入 SEO 與社群分享設定 (Open Graph) -->
+    <meta name="description" content="彰化縣原住民教育資源中心主辦 - 6小時 AI 族語動畫全日工作坊課程大綱">
+    <meta property="og:title" content="族語大富翁：用AI玩語言的祕密基地">
+    <meta property="og:description" content="結合 ChatGPT, Hedra, 與 Gemini 的 AI 族語教學實戰工作坊">
+    <meta property="og:image" content="https://res.cloudinary.com/dm1ksvptk/image/upload/v1769481201/LOGO_%E5%BD%B0%E5%8C%96%E5%8E%9F%E6%95%99Gemini_Generated_Image_kvk663kvk663kvk6_bbpte6.png">
+    <meta property="og:url" content=""> <!-- 部署後可填入網址 -->
+    <meta property="og:type" content="website">
+
+    <title>互動式AI族語動畫課程大綱 (6小時版)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+            padding: 0 1.5rem;
+        }
+        .accordion-button.active + .accordion-content {
+            max-height: 1500px; /* Increased for expanded content */
+            padding: 1rem 1.5rem 1.5rem;
+        }
+        .icon-plus {
+            transition: transform 0.3s ease-in-out;
+        }
+        .accordion-button.active .icon-plus {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 p-4 sm:p-6 md:p-8">
+    <div class="max-w-4xl mx-auto">
+        <header class="text-center mb-8">
+             <!-- Logos Area -->
+             <div class="flex justify-center items-end gap-4 sm:gap-8 mb-4 flex-wrap">
+                <div class="flex flex-col items-center group">
+                    <span class="text-xs text-gray-500 dark:text-gray-400 mb-1 opacity-0 group-hover:opacity-100 transition-opacity">主辦單位</span>
+                    <img src="https://res.cloudinary.com/dm1ksvptk/image/upload/v1769481201/LOGO_%E5%BD%B0%E5%8C%96%E5%8E%9F%E6%95%99Gemini_Generated_Image_kvk663kvk663kvk6_bbpte6.png" alt="彰化縣原住民教育資源中心" class="h-20 sm:h-24 w-auto object-contain rounded-lg shadow-sm hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="flex flex-col items-center group">
+                    <span class="text-xs text-gray-500 dark:text-gray-400 mb-1 opacity-0 group-hover:opacity-100 transition-opacity">授課教師</span>
+                    <img src="https://res.cloudinary.com/dm1ksvptk/image/upload/v1749659604/vxem1akzssudvs0neffn.png" alt="Rolla Moggi" class="h-20 sm:h-24 w-auto object-contain rounded-full shadow-sm hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">族語大富翁：用AI玩語言的祕密基地</h1>
+            <p class="mt-3 text-lg text-gray-600 dark:text-gray-400">主辦單位：彰化縣原住民教育資源中心｜授課教師：蘿拉麻吉 Rolla Moggi</p>
+            <div class="mt-4 inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-1 rounded-full text-sm font-semibold">
+                全日工作坊 (6小時)
+            </div>
+        </header>
+
+        <div id="course-accordion" class="space-y-4">
+            
+            <!-- 課前準備 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-yellow-300 dark:border-yellow-700">
+                <button class="accordion-button w-full text-left p-5 flex justify-between items-center bg-yellow-50 dark:bg-yellow-900/30 hover:bg-yellow-100 dark:hover:bg-yellow-900/50 transition-colors duration-300">
+                    <div class="flex items-center">
+                         <span class="text-yellow-500 dark:text-yellow-400 font-bold mr-4 text-xl">★</span>
+                        <div>
+                            <h2 class="text-lg sm:text-xl font-semibold text-yellow-800 dark:text-yellow-200">課前準備與講師須知</h2>
+                            <p class="text-sm text-yellow-600 dark:text-yellow-400">Important Setup & Instructor Notes</p>
+                        </div>
+                    </div>
+                    <div class="icon-container relative w-6 h-6">
+                        <svg class="icon-plus absolute inset-0 w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"></path></svg>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold text-md text-yellow-700 dark:text-yellow-300">學員課前準備：</h3>
+                            <p class="text-sm mt-1">務必請學員提前註冊好所有會用到的平台帳號，這會省下大量的課堂時間。</p>
+                            <ul class="list-disc list-inside mt-2 space-y-1 text-sm">
+                                <li><a href="https://chat.openai.com/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">ChatGPT</a> (或 Copilot)</li>
+                                <li><a href="https://gemini.google.com/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">Gemini</a></li>
+                                <li><a href="https://aistudio.google.com/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">Google AI Studio</a></li>
+                                <li><a href="https://www.canva.com/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">Canva</a></li>
+                                <li><a href="https://www.hedra.com/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">Hedra</a></li>
+                                <li><a href="https://cloudinary.com/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">Cloudinary</a></li>
+                                <li><a href="https://github.com/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">GitHub</a></li>
+                            </ul>
+                        </div>
+                         <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <h3 class="font-semibold text-md text-yellow-700 dark:text-yellow-300">講師備課須知：</h3>
+                             <ul class="list-disc list-inside mt-2 space-y-1 text-sm">
+                                <li><strong>長輩教學重點</strong>：操作步驟需拆解得非常細，並預留「忘記密碼」與「找不到下載檔案」的救援時間。</li>
+                                <li><strong>HTML 樣板</strong>：提前準備好簡單易懂的 HTML 樣板，降低程式碼恐懼感。</li>
+                             </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第一部分：上午場 A -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-blue-200 dark:border-blue-800">
+                <button class="accordion-button w-full text-left p-5 flex justify-between items-center bg-blue-50 dark:bg-blue-900/30 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors duration-300">
+                    <div class="flex items-center">
+                         <span class="text-blue-500 dark:text-blue-400 font-bold mr-4 text-xl">I</span>
+                        <div>
+                            <h2 class="text-lg sm:text-xl font-semibold text-blue-800 dark:text-blue-200">第一部分：角色創作與提示詞工程</h2>
+                            <p class="text-sm text-blue-600 dark:text-blue-400">Character Creation & Prompt Engineering (90 分鐘)</p>
+                        </div>
+                    </div>
+                    <div class="icon-container relative w-6 h-6">
+                        <svg class="icon-plus absolute inset-0 w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"></path></svg>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="space-y-4">
+                        <div class="p-4 border-l-4 border-blue-300 dark:border-blue-600 bg-gray-50 dark:bg-gray-800/50 rounded-r-lg">
+                            <h3 class="font-semibold text-md">▶︎ 暖身與概念 (20 分鐘)</h3>
+                            <p class="text-sm mt-1">展示 AI 族語教學應用案例，建立學習信心。</p>
+                        </div>
+                        <div class="p-4 border-l-4 border-blue-300 dark:border-blue-600 bg-gray-50 dark:bg-gray-800/50 rounded-r-lg">
+                            <h3 class="font-semibold text-md">▶︎ 步驟一：提示詞詠唱術 (30 分鐘)</h3>
+                            <p class="text-sm mt-1">重點教學：如何用精確的語言描述族服特徵、年齡與神韻。練習「修正」AI 畫錯的部分。</p>
+                            <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700 text-sm">
+                                <span class="font-medium text-blue-700 dark:text-blue-300">📚 資源：</span>
+                                <ul class="list-disc list-inside mt-1 space-y-1 text-gray-600 dark:text-gray-400 ml-2">
+                                    <li><a href="https://docs.google.com/document/d/1YolrTkwIvN2aVj6WYMJTkmihv3d26CLNy8HTfjhIkKo/edit?usp=sharing" target="_blank" class="text-blue-600 hover:underline">角色生成提示詞參考</a></li>
+                                    <li><a href="https://docs.google.com/document/d/1Yem59fyk9-yr6e-SzUT-npvM9tzFxgOhCNn3U-VPHw8/edit?usp=sharing" target="_blank" class="text-blue-600 hover:underline">Google 員工內部 AI 指令密技</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="p-4 border-l-4 border-blue-300 dark:border-blue-600 bg-gray-50 dark:bg-gray-800/50 rounded-r-lg">
+                            <h3 class="font-semibold text-md">▶︎ 步驟二：角色定裝與去背 (40 分鐘)</h3>
+                            <p class="text-sm mt-1">產出滿意的角色圖片，並進行去背處理，為動畫做準備。</p>
+                             <div class="text-sm mt-2 font-medium flex flex-wrap gap-2 items-center">
+                                <span>🛠️ 工具：</span>
+                                <a href="https://chat.openai.com/" target="_blank" class="hover:underline group">
+                                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-md text-xs group-hover:bg-gray-300 dark:group-hover:bg-gray-600 transition-colors">ChatGPT</span>
+                                </a>
+                                <a href="https://copilot.microsoft.com/" target="_blank" class="hover:underline group">
+                                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-md text-xs group-hover:bg-gray-300 dark:group-hover:bg-gray-600 transition-colors">Copilot</span>
+                                </a>
+                                <a href="https://gemini.google.com/" target="_blank" class="hover:underline group">
+                                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-md text-xs group-hover:bg-gray-300 dark:group-hover:bg-gray-600 transition-colors">Gemini</span>
+                                </a>
+                                <a href="#" target="_blank" class="hover:underline group" title="請確認連結">
+                                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-md text-xs group-hover:bg-gray-300 dark:group-hover:bg-gray-600 transition-colors">NanoBanana</span>
+                                </a>
+                                <a href="https://www.canva.com/" target="_blank" class="hover:underline group">
+                                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-md text-xs group-hover:bg-gray-300 dark:group-hover:bg-gray-600 transition-colors">Canva</span>
+                                </a>
+                                <a href="https://www.remove.bg/zh-tw" target="_blank" class="hover:underline group">
+                                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-md text-xs group-hover:bg-gray-300 dark:group-hover:bg-gray-600 transition-colors">Remove.bg (去背)</span>
+                                </a>
+                             </div>
+                             <div class="mt-2 text-sm text-gray-500">
+                                <a href="https://drive.google.com/drive/folders/1327STRT4msWggUVbdrwR_xo910FMSlSG?usp=sharing" target="_blank" class="text-blue-600 hover:underline">📚 AI 人像圖片素材包</a>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第二部分：上午場 B -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-teal-200 dark:border-teal-800">
+                <button class="accordion-button w-full text-left p-5 flex justify-between items-center bg-teal-50 dark:bg-teal-900/30 hover:bg-teal-100 dark:hover:bg-teal-900/50 transition-colors duration-300">
+                     <div class="flex items-center">
+                         <span class="text-teal-500 dark:text-teal-400 font-bold mr-4 text-xl">II</span>
+                        <div>
+                            <h2 class="text-lg sm:text-xl font-semibold text-teal-800 dark:text-teal-200">第二部分：故事腳本與聲音魔法</h2>
+                            <p class="text-sm text-teal-600 dark:text-teal-400">Scripting & Voice Cloning (80 分鐘)</p>
+                        </div>
+                    </div>
+                    <div class="icon-container relative w-6 h-6">
+                        <svg class="icon-plus absolute inset-0 w-6 h-6 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"></path></svg>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                     <div class="space-y-4">
+                        <div class="p-4 border-l-4 border-teal-300 dark:border-teal-600 bg-gray-50 dark:bg-gray-800/50 rounded-r-lg">
+                            <h3 class="font-semibold text-md">▶︎ 步驟三：AI 協作故事腳本 (40 分鐘)</h3>
+                            <p class="text-sm mt-1">任務：不只是圖片，讓 AI 幫忙想出符合角色設定的族語短對話或自我介紹。</p>
+                            <p class="text-sm mt-2 text-gray-500">重點：練習將中文腳本翻譯或轉換為族語羅馬拼音。</p>
+                            <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700 text-sm">
+                                <span class="font-medium text-teal-700 dark:text-teal-300">📚 學習資源：</span>
+                                <a href="https://drive.google.com/drive/folders/13qNGY7TPjQOXdtBwtE3e0mCY3dF30HU4?usp=sharing" target="_blank" class="ml-2 text-blue-600 hover:underline">族語學習詞表下載區 (Google Drive)</a>
+                            </div>
+                        </div>
+                        <div class="p-4 border-l-4 border-teal-300 dark:border-teal-600 bg-gray-50 dark:bg-gray-800/50 rounded-r-lg">
+                            <h3 class="font-semibold text-md">▶︎ 步驟四：聲音採集與處理 (40 分鐘)</h3>
+                            <p class="text-sm mt-1">任務：錄製乾淨的族語聲音，或使用 AI 變聲。</p>
+                             <div class="text-sm mt-2 font-medium flex flex-wrap gap-2 items-center">
+                                <span>🛠️ 工具：</span>
+                                <a href="https://drive.google.com/drive/folders/15dzIf-UBqyabh5af4b3jmSnvOJ5vylke?usp=sharing" target="_blank" class="hover:underline group">
+                                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-md text-xs group-hover:bg-gray-300 dark:group-hover:bg-gray-600 transition-colors">Wootechy VoxBox (軟體下載)</span>
+                                </a>
+                                <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-md text-xs">手機錄音</span>
+                             </div>
+                             <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700 text-sm">
+                                <span class="font-medium text-teal-700 dark:text-teal-300">🎵 音樂資源：</span>
+                                <a href="https://drive.google.com/drive/folders/1CYfbmOlqzFkT81tid8KomZIsoq4irznL?usp=sharing" target="_blank" class="ml-2 text-blue-600 hover:underline">遊戲背景音樂素材 (Google Drive)</a>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 中場休息分隔 -->
+            <div class="flex items-center justify-center py-4">
+                <div class="h-px bg-gray-300 w-full max-w-[100px]"></div>
+                <span class="px-4 text-sm text-gray-500 font-medium">午休時間 Lunch Break (60 min)</span>
+                <div class="h-px bg-gray-300 w-full max-w-[100px]"></div>
+            </div>
+
+            <!-- 第三部分：下午場 A -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-green-200 dark:border-green-800">
+                <button class="accordion-button w-full text-left p-5 flex justify-between items-center bg-green-50 dark:bg-green-900/30 hover:bg-green-100 dark:hover:bg-green-900/50 transition-colors duration-300">
+                    <div class="flex items-center">
+                         <span class="text-green-500 dark:text-green-400 font-bold mr-4 text-xl">III</span>
+                        <div>
+                           <h2 class="text-lg sm:text-xl font-semibold text-green-800 dark:text-green-200">第三部分：動態合成與資產上雲</h2>
+                           <p class="text-sm text-green-600 dark:text-green-400">Animation Synthesis & Cloud Deployment (90 分鐘)</p>
+                        </div>
+                    </div>
+                     <div class="icon-container relative w-6 h-6">
+                        <svg class="icon-plus absolute inset-0 w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"></path></svg>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="space-y-4">
+                        <div class="p-4 border-l-4 border-green-300 dark:border-green-600 bg-gray-50 dark:bg-gray-800/50 rounded-r-lg">
+                            <h3 class="font-semibold text-md">▶︎ 步驟五：Hedra 魔法實作 (60 分鐘)</h3>
+                            <p class="text-sm mt-1">任務：這是最關鍵的步驟。將圖片與聲音合成。預留時間讓學員反覆嘗試不同的表情設定。</p>
+                            <div class="text-sm mt-2 font-medium flex flex-wrap gap-2 items-center">
+                                <span>🛠️ 工具：</span>
+                                <a href="https://www.hedra.com/" target="_blank" class="hover:underline group">
+                                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-md text-xs group-hover:bg-gray-300 dark:group-hover:bg-gray-600 transition-colors">Hedra</span>
+                                </a>
+                            </div>
+                            <div class="mt-2 text-sm text-gray-500 flex flex-col gap-1">
+                                <a href="https://drive.google.com/file/d/1NzuAhzE0l08aRgyXBUDw5YUIGXrBXybj/view?usp=sharing" target="_blank" class="text-blue-600 hover:underline">📚 Hedra 教學簡報 (Google Drive)</a>
+                                <a href="https://drive.google.com/drive/folders/1dJHP1iwT9_ylzWpLcaaMY5v8KEX09vRf" target="_blank" class="text-blue-600 hover:underline">🎬 Hedra 影片範例 (Google Drive)</a>
+                            </div>
+                        </div>
+                        <div class="p-4 border-l-4 border-green-300 dark:border-green-600 bg-gray-50 dark:bg-gray-800/50 rounded-r-lg">
+                            <h3 class="font-semibold text-md">▶︎ 步驟六：Cloudinary 雲端管理 (30 分鐘)</h3>
+                            <p class="text-sm mt-1">任務：取得影片網址。這步驟較技術性，需一步步帶領操作。</p>
+                            <div class="text-sm mt-2 font-medium flex flex-wrap gap-2 items-center">
+                                <span>🛠️ 工具：</span>
+                                <a href="https://cloudinary.com/" target="_blank" class="hover:underline group">
+                                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-md text-xs group-hover:bg-gray-300 dark:group-hover:bg-gray-600 transition-colors">Cloudinary</span>
+                                </a>
+                            </div>
+                            <div class="mt-2 text-sm text-gray-500">
+                                <a href="https://drive.google.com/file/d/1RG8s58mrq0LrzqDYGA7F5GdKfV0kDIGI/view?usp=sharing" target="_blank" class="text-blue-600 hover:underline">📚 Cloudinary 教學簡報 (Google Drive)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- 第四部分：下午場 B -->
+             <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-purple-200 dark:border-purple-800">
+                <button class="accordion-button w-full text-left p-5 flex justify-between items-center bg-purple-50 dark:bg-purple-900/30 hover:bg-purple-100 dark:hover:bg-purple-900/50 transition-colors duration-300">
+                    <div class="flex items-center">
+                         <span class="text-purple-500 dark:text-purple-400 font-bold mr-4 text-xl">IV</span>
+                        <div>
+                           <h2 class="text-lg sm:text-xl font-semibold text-purple-800 dark:text-purple-200">第四部分：遊戲設計與成果發布</h2>
+                           <p class="text-sm text-purple-600 dark:text-purple-400">Game Design & Web Showcase (80 分鐘)</p>
+                        </div>
+                    </div>
+                     <div class="icon-container relative w-6 h-6">
+                        <svg class="icon-plus absolute inset-0 w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"></path></svg>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="space-y-4">
+                        <div class="p-4 border-l-4 border-purple-300 dark:border-purple-600 bg-gray-50 dark:bg-gray-800/50 rounded-r-lg">
+                            <h3 class="font-semibold text-md">▶︎ 步驟七：Gemini 遊戲企劃 (30 分鐘)</h3>
+                            <p class="text-sm mt-1">任務：上傳角色，讓 AI 設計大富翁的「機會」與「命運」卡牌內容。</p>
+                            <p class="text-sm mt-2 font-medium">🛠️ 工具：
+                                <a href="https://gemini.google.com/" target="_blank" class="hover:underline"><span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-md text-xs">Gemini</span></a>
+                            </p>
+                        </div>
+                        <div class="p-4 border-l-4 border-purple-300 dark:border-purple-600 bg-gray-50 dark:bg-gray-800/50 rounded-r-lg">
+                            <h3 class="font-semibold text-md">▶︎ 步驟八：網頁組合與上線 (30 分鐘)</h3>
+                            <p class="text-sm mt-1">任務：修改 HTML 參數，將自己的影片與文字放入網頁，並使用 GitHub Pages 發布。</p>
+                            <div class="text-sm mt-2 font-medium flex flex-wrap gap-2 items-center">
+                                <span>🛠️ 工具：</span>
+                                <a href="https://docs.github.com/en/pages" target="_blank" class="hover:underline group">
+                                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-md text-xs group-hover:bg-gray-300 dark:group-hover:bg-gray-600 transition-colors">GitHub Pages</span>
+                                </a>
+                            </div>
+                            <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700 text-sm flex flex-col gap-1">
+                                <div>
+                                    <span class="font-medium text-purple-700 dark:text-purple-300">📚 教學資源：</span>
+                                    <a href="https://drive.google.com/file/d/19VWT2pV-6NrXyh7GZ5gyoO6XxxxnS0-c/view?usp=drive_link" target="_blank" class="ml-1 text-blue-600 hover:underline">GitHub 架設網站教學簡報 (Google Drive)</a>
+                                </div>
+                                <div>
+                                     <span class="font-medium text-purple-700 dark:text-purple-300">🎲 素材資源：</span>
+                                     <a href="https://drive.google.com/drive/folders/1vQIi8bGxSQfjpTNHRRIN8Bl_JaZ1N6Ei?usp=sharing" target="_blank" class="ml-1 text-blue-600 hover:underline">骰子圖片素材包 (Google Drive)</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 border-l-4 border-purple-300 dark:border-purple-600 bg-gray-50 dark:bg-gray-800/50 rounded-r-lg">
+                            <h3 class="font-semibold text-md">▶︎ 成果發表與大合照 (20 分鐘)</h3>
+                             <p class="text-sm mt-1">任務：互相掃描 QR Code 體驗彼此的遊戲。</p>
+                             <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700 text-sm">
+                                <span class="font-medium text-purple-700 dark:text-purple-300">🏆 成果範例：</span>
+                                <a href="https://pangcah-monopoly-35892743414.us-west1.run.app/" target="_blank" class="ml-2 text-blue-600 hover:underline">成果大富翁網站 1 (範例)</a>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="text-center mt-10 text-sm text-gray-500 dark:text-gray-400">
+            <p>為 AI 族語動畫課程教學設計</p>
+            <p>Generated on <span id="generation-date"></span></p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    button.classList.toggle('active');
+                });
+            });
+
+            // Set generation date
+            const dateElement = document.getElementById('generation-date');
+            if(dateElement) {
+                dateElement.textContent = new Date().toLocaleDateString('zh-TW', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            }
+        });
+    </script>
+</body>
+</html>
