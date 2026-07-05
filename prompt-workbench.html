@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>提示詞工作台｜教學教案及評量設計實作</title>
+    <style>
+      :root {
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --text: #1e293b;
+        --muted: #64748b;
+        --line: #e2e8f0;
+        --indigo: #4f46e5;
+        --indigo-dark: #3730a3;
+        --green: #047857;
+        --amber: #92400e;
+        --slate: #0f172a;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        color: var(--text);
+        background: var(--bg);
+        font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+      }
+
+      a { color: inherit; }
+
+      .hero {
+        padding: 56px 24px 46px;
+        color: #ffffff;
+        background: linear-gradient(135deg, #4338ca, #0f766e);
+      }
+
+      .wrap {
+        width: min(1080px, 100%);
+        margin: 0 auto;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.15);
+        color: #e0e7ff;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .teacher-id {
+        margin-top: 18px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .teacher-id img {
+        width: 66px;
+        height: 66px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid rgba(255, 255, 255, 0.65);
+        background: #ffffff;
+      }
+
+      .teacher-banner {
+        width: min(320px, 100%);
+        height: 66px;
+        border-radius: 12px;
+        object-fit: cover;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+      }
+
+      h1 {
+        margin: 18px 0 12px;
+        font-size: clamp(30px, 5vw, 48px);
+        line-height: 1.12;
+      }
+
+      .hero p {
+        max-width: 760px;
+        margin: 0;
+        color: #e0f2fe;
+        font-size: 18px;
+        line-height: 1.8;
+      }
+
+      main {
+        padding: 36px 24px 56px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .four {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .card,
+      .prompt-card,
+      .notice {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--card);
+        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .card h2,
+      .section-title {
+        margin: 0 0 12px;
+        font-size: 22px;
+      }
+
+      .card p,
+      .card li,
+      .notice p {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .card ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      section {
+        margin-top: 36px;
+      }
+
+      .step-card {
+        padding: 18px;
+        text-align: center;
+      }
+
+      .step-card strong {
+        display: block;
+        color: var(--indigo);
+        font-size: 26px;
+        opacity: 0.55;
+      }
+
+      .notice {
+        padding: 20px;
+        background: #fffbeb;
+        border-color: #fde68a;
+      }
+
+      .notice h2 {
+        color: var(--amber);
+      }
+
+      .notice a {
+        color: #3730a3;
+        font-weight: 800;
+      }
+
+      .prompt-card {
+        margin-top: 18px;
+        overflow: hidden;
+      }
+
+      .prompt-head {
+        padding: 18px;
+        border-bottom: 1px solid var(--line);
+        background: #f8fafc;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+      }
+
+      .prompt-head h3 {
+        margin: 0 0 5px;
+      }
+
+      .prompt-head p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .tag {
+        margin-left: 8px;
+        padding: 3px 8px;
+        border-radius: 999px;
+        color: #3730a3;
+        background: #e0e7ff;
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .tag.required {
+        color: #991b1b;
+        background: #fee2e2;
+      }
+
+      .tag.optional {
+        color: #334155;
+        background: #e2e8f0;
+      }
+
+      .copy {
+        min-height: 38px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        padding: 0 12px;
+        color: #334155;
+        background: #ffffff;
+        font-weight: 800;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      .copy.copied {
+        color: var(--green);
+        border-color: #bbf7d0;
+        background: #dcfce7;
+      }
+
+      pre {
+        margin: 0;
+        padding: 20px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        color: #f8fafc;
+        background: var(--slate);
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .checklist {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 18px;
+      }
+
+      .checklist label {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        line-height: 1.55;
+      }
+
+      footer {
+        padding: 24px;
+        color: #cbd5e1;
+        background: #0f172a;
+        text-align: center;
+      }
+
+      @media (max-width: 760px) {
+        .two,
+        .four,
+        .checklist {
+          grid-template-columns: 1fr;
+        }
+
+        .prompt-head {
+          display: grid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap">
+        <div class="badge">2026/07/05 教學教案及評量設計實作</div>
+        <div class="teacher-id">
+          <img src="https://res.cloudinary.com/dm1ksvptk/image/upload/v1783207455/RM13_e7or1r.png" alt="蘿拉麻吉 Sonay Rolla Moggi 教師 Logo" />
+          <img class="teacher-banner" src="https://res.cloudinary.com/dm1ksvptk/image/upload/v1783207480/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2_2026-03-28_195849_mhp2g6.png" alt="蘿拉麻吉 Sonay Rolla Moggi 教師識別圖" />
+        </div>
+        <h1>蘿拉麻吉 Rolla Moggi 老師<br />AI 素養教案與評量設計工作台</h1>
+        <p>從教師手冊出發，快速完成教材分析、素養教案、課堂活動與評量規準。請整本上傳、同步只做一課，學會穩定流程再套用。</p>
+      </div>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <section class="grid two">
+          <article class="card">
+            <h2>課程目標</h2>
+            <p>我們不是讓 AI 一次幫我們讀完整本教師手冊，而是學會穩定流程：上傳整本手冊取得脈絡，每次只指定一課分析。只要一課做得準，之後每一課都能複製。</p>
+          </article>
+          <article class="card">
+            <h2>今日 4 小時實作產出</h2>
+            <ul>
+              <li>一份單課教材分析表</li>
+              <li>一份素養導向教案骨架</li>
+              <li>一份課堂活動設計</li>
+              <li>一份評量設計與 rubric</li>
+            </ul>
+          </article>
+        </section>
+
+        <section>
+          <h2 class="section-title">操作流程總覽</h2>
+          <div class="grid four">
+            <article class="card step-card"><strong>01</strong>準備階段</article>
+            <article class="card step-card"><strong>02</strong>資料萃取</article>
+            <article class="card step-card"><strong>03</strong>骨架生成</article>
+            <article class="card step-card"><strong>04</strong>活動與評量</article>
+          </div>
+        </section>
+
+        <section class="notice">
+          <h2>課前準備與 AI 系統上傳</h2>
+          <p>1. 準備教材：前往 <a href="https://ebook.alcd.center/" target="_blank" rel="noopener">政大原民中心電子書城</a> 下載 PDF，或使用講師提供的 Markdown 教材包。</p>
+          <p>2. 準備課綱：開啟 12 年國教族語文課綱，作為對照學習表現與學習內容之參考。</p>
+          <p>3. 準備教案格式：開啟「<a href="https://docs.google.com/document/d/1T1-iwoCJplgLN9mUG6RIgjTsAD64sBi5/edit" target="_blank" rel="noopener">撰寫參考教案版模</a>」，建議先建立副本，方便將 AI 產出貼入公版。</p>
+          <p>4. 工具：開啟 <a href="https://notebooklm.google.com/" target="_blank" rel="noopener">NotebookLM</a>、<a href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini</a>，或直接使用 <a href="https://gemini.google.com/gem/f349068f3cb8" target="_blank" rel="noopener">蘿拉麻吉 Rolla Moggi 老師的 Gem 教案助手</a>。</p>
+          <p><strong>注意：</strong>同一課次的教案骨架、活動設計、評量設計都要在同一個對話串中接續完成。若切換課次，請另開新對話。</p>
+        </section>
+
+        <section>
+          <h2 class="section-title">第一階段：資料萃取</h2>
+          <p>先讓 AI 定位正確內容，避免把整本書的單字與課文混淆。</p>
+          <div id="extractPrompts"></div>
+        </section>
+
+        <section>
+          <h2 class="section-title">第二階段：教案、活動與評量生成</h2>
+          <p>請將這三個提示詞依序貼入同一個對話串中，分批擴充內容。</p>
+          <div id="lessonPrompts"></div>
+        </section>
+
+        <section class="card">
+          <h2>AI 教案人工檢核表</h2>
+          <p>AI 產出教案後，教師不可直接使用，請務必完成以下檢核再做最後編修。</p>
+          <div class="checklist" id="checklist"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer>此工作台依照 2026 蘿拉麻吉 Rolla Moggi 老師教材與系統設定建置。</footer>
+
+    <script>
+      const PROMPTS = {
+        p0: `請先在這份教師手冊中找到【第 4 課】的範圍。\n\n在分析前，請先告訴我你判斷第 4 課包含哪些頁面、章節標題或段落。\n\n請只回覆：\n1. 第 4 課的標題\n2. 可能的頁碼範圍\n3. 你判斷範圍的依據\n4. 是否有不確定之處\n\n請先不要整理教案內容。`,
+        pA: `請閱讀這份教師手冊，只根據【第 4 課】的內容，幫我整理本課教學重點。\n\n請不要混入其他課次內容。\n若你不確定某個內容是否屬於第 4 課，請標註「不確定」。\n\n請依照以下格式輸出：\n1. 核心單字表 (族語、中文、關聯詞、教學提醒)\n2. 課文內容\n3. 句型公式 (公式、中文、例句、翻譯、教學提醒)\n4. 文化小百科\n5. 教學提醒\n6. 學生易錯點\n\n輸出格式設定：\n1. 語言：繁體中文\n2. 字體：思源黑體\n3. 表格請清楚分欄\n4. 教師可直接複製到教案文件`,
+        pB: `請搜尋整本教師手冊，幫我整理出所有與【第 4 課】內容或句型公式相關的單字。\n\n請依照以下關聯類型分類：\n1. 主題相關\n2. 句型相關\n3. 文化相關\n4. 情境任務可延伸使用\n\n請列出這些單字分別出現在哪幾課，並簡要說明該課與第 4 課的關聯。\n\n請用表格呈現，欄位包含：\n中文、族語、出處課次、關聯類型、與本課的關聯、可如何用於複習或延伸活動。`,
+        system: `你是蘿拉麻吉 Rolla Moggi 老師的本土語文教學設計助理。\n\n請協助我把「單課教材分析」轉成可在真實教室執行的素養導向教案。請依照分階段方式工作，不要一次把所有內容混在一起。\n\n重要規則：\n1. 只能根據我提供的教材分析與 Markdown 課次內容設計，不要自行編造族語、文化背景或課文。\n2. 不得預設族別或語別；請先從教材標題、檔名、課文判斷。無法確認請標註「需教師補充」。\n3. 不確定的內容請標註「需教師補充」或「需回原教師手冊確認」。\n4. 同一課次的教案骨架、活動設計、評量設計都要在同一個對話串中接續完成。\n\n第一階段：教案骨架\n請先產出：課程基本資料、族別/語別確認、教材分析摘要、學習目標、核心素養、教學流程骨架(引起動機、發展、綜合)、差異化方向。此階段不寫完整活動細節與 rubric。\n\n第二階段：活動設計 (等我提示後再做)\n擴充：口說、聽力、小組合作、情境任務。需含時間、教師行動、學生任務、預期產出等。\n\n第三階段：評量設計 (等我提示後再做)\n產出：形成性/總結性評量、各式題目、學習單、rubric(優良、達成、部分達成、待加強，需具體描述)。`,
+        skeleton: `請根據以下教材分析資料，設計一份素養導向教案的「骨架」。\n\n這個階段請只完成以下內容，先不要設計具體課堂活動細節，也先不要設計評量規準。\n這兩部分會在下一階段用另外的提示詞擴充。\n\n請務必根據我提供的資料設計，不要自行編造教材內容。\n如果資料不足，請標註「需教師補充」。\n\n請包含以下內容：\n1. 課程基本資料 (課名、對象、時間、教材)\n2. 教材分析 (核心單字、重點、句型、文化、易錯點)\n3. 學習目標 (語言知識、技能、文化、表現)\n4. 核心素養\n5. 教學流程骨架 (引起動機、發展活動、綜合活動；含時間/重點/產出)\n6. 差異化教學策略方向\n\n請使用繁體中文輸出。請讓內容具體、可執行。\n\n【請在此貼上前面的教材分析結果】`,
+        activity: `請根據上一階段的教案骨架，特別是「教學流程」的三個階段，展開成具體可執行的課堂活動。\n\n請不要更動教材分析、學習目標與核心素養的內容，只針對教學流程做活動細節擴充。\n\n請至少設計：\n- 口說活動\n- 聽力理解活動\n- 小組合作活動\n- 情境任務\n\n每個活動請包含：\n- 對應教學流程的哪個階段\n- 時間\n- 教師行動\n- 學生任務\n- 使用材料\n- 預期產出\n- 教師提問\n\n請針對不同程度學生，具體說明活動要如何調整，並銜接教案骨架中的差異化教學方向。`,
+        evaluation: `請根據前兩階段的教案骨架與課堂活動設計，設計本土語文課程評量。\n\n請不要重新設計教學流程或活動內容，只針對評量部分作業。\n\n請包含：\n1. 形成性評量 (對應課堂活動)\n2. 總結性評量 (檢核學習成果任務)\n3. 口說評量題目\n4. 聽力理解題目\n5. 詞彙應用題目\n6. 情境任務評量\n7. 學習單題目\n8. 評量規準 rubric (優良、達成、部分達成、待加強)\n\n每一個等級都要寫出具體可觀察的學生表現，避免只寫「表現良好」「尚可」這類模糊描述。`
+      };
+
+      const CHECKLIST = [
+        "學習目標是否符合學生程度？",
+        "活動是否能在實際時間內完成？",
+        "是否有學生練習族語的機會？",
+        "是否包含文化理解？",
+        "教師提問是否具體？",
+        "學生任務是否清楚？",
+        "是否有形成性評量？",
+        "評量方式是否能觀察學生表現？",
+        "rubric 是否清楚可判斷？",
+        "是否有 AI 編造或不確定內容？",
+        "是否需要教師補充在地文化或語音細節？"
+      ];
+
+      function copyText(text, button) {
+        const helper = document.createElement("textarea");
+        helper.value = text;
+        helper.style.position = "fixed";
+        helper.style.left = "-9999px";
+        document.body.appendChild(helper);
+        helper.select();
+        document.execCommand("copy");
+        helper.remove();
+        button.classList.add("copied");
+        button.textContent = "已複製";
+        window.setTimeout(() => {
+          button.classList.remove("copied");
+          button.textContent = "一鍵複製";
+        }, 1800);
+      }
+
+      function promptCard({ title, desc, prompt, tag = "", tagClass = "" }) {
+        const card = document.createElement("article");
+        card.className = "prompt-card";
+        card.innerHTML = `
+          <div class="prompt-head">
+            <div>
+              <h3>${title}${tag ? `<span class="tag ${tagClass}">${tag}</span>` : ""}</h3>
+              <p>${desc}</p>
+            </div>
+            <button class="copy" type="button">一鍵複製</button>
+          </div>
+          <pre></pre>
+        `;
+        card.querySelector("pre").textContent = prompt;
+        card.querySelector("button").addEventListener("click", (event) => copyText(prompt, event.currentTarget));
+        return card;
+      }
+
+      const extractPrompts = [
+        { title: "提示詞 0：定位指定課次", desc: "在分析前，先請 AI 找到指定課次範圍。使用前請自行修改課次號碼。", prompt: PROMPTS.p0, tag: "確認範圍用" },
+        { title: "提示詞 A：單課教學重點", desc: "萃取核心單字、課文、句型與文化。AI 回覆後，請檢查是否混入其他課內容。", prompt: PROMPTS.pA, tag: "必做", tagClass: "required" },
+        { title: "提示詞 B：全書相關單字", desc: "找出全書中與本課主題相關的其他單字，用於複習與連結。", prompt: PROMPTS.pB, tag: "選做", tagClass: "optional" }
+      ];
+
+      const lessonPrompts = [
+        { title: "系統設定：v5.8 助理人設", desc: "第一步：告訴 AI 它的身分與分階段作業規則。", prompt: PROMPTS.system, tag: "前置設定" },
+        { title: "教案骨架提示詞", desc: "第二步：將提示詞 A 的教材重點貼在提示詞最下方送出。", prompt: PROMPTS.skeleton },
+        { title: "活動設計提示詞", desc: "第三步：等骨架出來後，根據骨架擴充互動細節。", prompt: PROMPTS.activity },
+        { title: "評量設計提示詞", desc: "第四步：等活動出來後，產生學習單與 Rubric 規準。", prompt: PROMPTS.evaluation }
+      ];
+
+      extractPrompts.forEach((item) => document.querySelector("#extractPrompts").appendChild(promptCard(item)));
+      lessonPrompts.forEach((item) => document.querySelector("#lessonPrompts").appendChild(promptCard(item)));
+      CHECKLIST.forEach((item) => {
+        const label = document.createElement("label");
+        label.innerHTML = `<input type="checkbox" /> <span>${item}</span>`;
+        document.querySelector("#checklist").appendChild(label);
+      });
+    </script>
+  </body>
+</html>
